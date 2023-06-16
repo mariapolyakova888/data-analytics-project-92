@@ -1,0 +1,155 @@
+name,weekday,income
+Abraham Bennet,monday,165 368
+Abraham Bennet,tuesday,180 152
+Abraham Bennet,wednesday,167 323
+Abraham Bennet,thursday,167 012
+Abraham Bennet,friday,174 059
+Abraham Bennet,saturday,167 704
+Abraham Bennet,sunday,174 683
+Albert Ringer,monday,549 549
+Albert Ringer,tuesday,590 171
+Albert Ringer,wednesday,605 275
+Albert Ringer,thursday,601 003
+Albert Ringer,friday,545 790
+Albert Ringer,saturday,576 333
+Albert Ringer,sunday,557 581
+Ann Dull,monday,54 028
+Ann Dull,tuesday,56 026
+Ann Dull,wednesday,54 005
+Ann Dull,thursday,55 162
+Ann Dull,friday,56 206
+Ann Dull,saturday,55 957
+Ann Dull,sunday,54 274
+Anne Ringer,monday,142 746
+Anne Ringer,tuesday,130 395
+Anne Ringer,wednesday,136 409
+Anne Ringer,thursday,138 161
+Anne Ringer,friday,134 076
+Anne Ringer,saturday,141 630
+Anne Ringer,sunday,135 126
+Burt Gringlesby,monday,167 038
+Burt Gringlesby,tuesday,171 853
+Burt Gringlesby,wednesday,166 500
+Burt Gringlesby,thursday,162 600
+Burt Gringlesby,friday,168 766
+Burt Gringlesby,saturday,169 346
+Burt Gringlesby,sunday,169 853
+Charlene Locksley,monday,154 488
+Charlene Locksley,tuesday,151 508
+Charlene Locksley,wednesday,158 121
+Charlene Locksley,thursday,153 737
+Charlene Locksley,friday,149 026
+Charlene Locksley,saturday,154 865
+Charlene Locksley,sunday,142 038
+Cheryl Carson,monday,138 258
+Cheryl Carson,tuesday,146 766
+Cheryl Carson,wednesday,139 021
+Cheryl Carson,thursday,126 985
+Cheryl Carson,friday,147 929
+Cheryl Carson,saturday,132 615
+Cheryl Carson,sunday,148 619
+Dean Straight,monday,295 776
+Dean Straight,tuesday,288 005
+Dean Straight,wednesday,300 166
+Dean Straight,thursday,317 008
+Dean Straight,friday,301 971
+Dean Straight,saturday,301 532
+Dean Straight,sunday,293 322
+Dirk Stringer,monday,1 236 712
+Dirk Stringer,tuesday,1 128 341
+Dirk Stringer,wednesday,1 121 076
+Dirk Stringer,thursday,1 185 408
+Dirk Stringer,friday,1 133 261
+Dirk Stringer,saturday,1 232 248
+Dirk Stringer,sunday,1 188 470
+Heather McBadden,monday,478 001
+Heather McBadden,tuesday,415 336
+Heather McBadden,wednesday,447 899
+Heather McBadden,thursday,442 119
+Heather McBadden,friday,442 210
+Heather McBadden,saturday,455 308
+Heather McBadden,sunday,493 441
+Innes del Castillo,monday,374 990
+Innes del Castillo,tuesday,392 673
+Innes del Castillo,wednesday,370 634
+Innes del Castillo,thursday,350 913
+Innes del Castillo,friday,373 295
+Innes del Castillo,saturday,396 396
+Innes del Castillo,sunday,381 715
+Johnson White,monday,118 462
+Johnson White,tuesday,130 397
+Johnson White,wednesday,126 652
+Johnson White,thursday,131 586
+Johnson White,friday,124 502
+Johnson White,saturday,123 930
+Johnson White,sunday,128 703
+Livia Karsen,monday,381 518
+Livia Karsen,tuesday,378 431
+Livia Karsen,wednesday,447 608
+Livia Karsen,thursday,470 252
+Livia Karsen,friday,464 891
+Livia Karsen,saturday,382 853
+Livia Karsen,sunday,364 051
+Marjorie Green,monday,105 677
+Marjorie Green,tuesday,107 431
+Marjorie Green,wednesday,112 766
+Marjorie Green,thursday,102 622
+Marjorie Green,friday,113 974
+Marjorie Green,saturday,106 603
+Marjorie Green,sunday,117 112
+Meander Smith,monday,169 903
+Meander Smith,tuesday,193 679
+Meander Smith,wednesday,177 342
+Meander Smith,thursday,194 807
+Meander Smith,friday,195 445
+Meander Smith,saturday,183 718
+Meander Smith,sunday,202 422
+Michael O'Leary,monday,167 187
+Michael O'Leary,tuesday,141 855
+Michael O'Leary,wednesday,164 255
+Michael O'Leary,thursday,162 336
+Michael O'Leary,friday,173 358
+Michael O'Leary,saturday,157 595
+Michael O'Leary,sunday,162 767
+Michel DeFrance,monday,691 045
+Michel DeFrance,tuesday,691 450
+Michel DeFrance,wednesday,699 369
+Michel DeFrance,thursday,697 326
+Michel DeFrance,friday,682 969
+Michel DeFrance,saturday,717 276
+Michel DeFrance,sunday,689 185
+Morningstar Greene,monday,87 056
+Morningstar Greene,tuesday,86 954
+Morningstar Greene,wednesday,86 915
+Morningstar Greene,thursday,84 816
+Morningstar Greene,friday,93 367
+Morningstar Greene,saturday,84 004
+Morningstar Greene,sunday,94 576
+Reginald Blotchet-Halls,monday,156 568
+Reginald Blotchet-Halls,tuesday,142 877
+Reginald Blotchet-Halls,wednesday,150 277
+Reginald Blotchet-Halls,thursday,155 123
+Reginald Blotchet-Halls,friday,155 372
+Reginald Blotchet-Halls,saturday,153 066
+Reginald Blotchet-Halls,sunday,148 517
+Sheryl Hunter,monday,224 453
+Sheryl Hunter,tuesday,232 276
+Sheryl Hunter,wednesday,220 583
+Sheryl Hunter,thursday,220 229
+Sheryl Hunter,friday,230 960
+Sheryl Hunter,saturday,218 213
+Sheryl Hunter,sunday,231 331
+Stearns MacFeather,monday,51 903
+Stearns MacFeather,tuesday,48 375
+Stearns MacFeather,wednesday,41 939
+Stearns MacFeather,thursday,41 903
+Stearns MacFeather,friday,47 097
+Stearns MacFeather,saturday,44 699
+Stearns MacFeather,sunday,48 551
+Sylvia Panteley,monday,182 230
+Sylvia Panteley,tuesday,182 518
+Sylvia Panteley,wednesday,174 191
+Sylvia Panteley,thursday,181 368
+Sylvia Panteley,friday,176 771
+Sylvia Panteley,saturday,181 077
+Sylvia Panteley,sunday,178 200
