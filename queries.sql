@@ -1,13 +1,12 @@
-/* 4-й шаг проекта:
- Подсчет общего количества покупателей */
+-- 4-й шаг проекта:
+ -- Подсчет общего количества покупателей
 
 select
     count(customer_id) as customers_count
 from customers;
 
-/* 5-й шаг проекта:
-
-1. Отчет о десятке лучших продавцов, выполнивших наибольшую выручку.Отсортирован по убыванию выручки */
+-- 5-й шаг проекта:
+-- Отчет о десятке лучших продавцов, выполнивших наибольшую выручку.Отсортирован по убыванию выручки
 
 select
     concat(e.first_name, ' ', null, e.last_name) as name,
@@ -23,8 +22,8 @@ order by 3 desc
 limit 10
 ;
 
-/* 2. Отчет о продавцах, чья средняя выручка за сделку меньше средней выручки за сделку по всем продавцам.
-Отсортирован по возрастанию выручки */
+-- 2. Отчет о продавцах, чья средняя выручка за сделку меньше средней выручки за сделку по всем продавцам.
+--Отсортирован по возрастанию выручки
 
 with tab as (
     select
@@ -48,14 +47,14 @@ order by 2 asc
 limit 10
 ;
 
-/* 3. Отчет о выручке по дням недели, отсортированный по порядковому номеру дня недели */
+--3. Отчет о выручке по дням недели, отсортированный по порядковому номеру дня недели
 
 with tab as (
     select
         to_char(s.sale_date, 'id') as num_weekday,
         to_char(date(s.sale_date), 'day') as weekday,
         concat(e.first_name, ' ', null, e.last_name) as name,
-        round(avg(s.quantity*p.price), 0) as income
+        round(sum(s.quantity*p.price), 0) as income
     from sales s
     left join employees e
     on s.sales_person_id = e.employee_id
@@ -67,15 +66,15 @@ with tab as (
 select
     tab.name,
     tab.weekday,
-    income
+    tab.income
 from tab
-group by tab.name, tab.weekday, tab.num_weekday, income
+group by tab.name, tab.weekday, tab.num_weekday, tab.income
 order by tab.name, tab.num_weekday asc
 ;
 
-/* 6-й шаг проекта 
+-- 6-й шаг проекта:
   
-  1. Отчет о количестве покупателей в разных возрастных группах */
+  -- 1. Отчет о количестве покупателей в разных возрастных группах
 
 select
     case
@@ -89,7 +88,7 @@ group by 1
 order by 1
 ;
 
-/* 2. Количество уникальных покупателей и выручка, которую они принесли */
+ -- 2. Количество уникальных покупателей и выручка, которую они принесли
 
 select distinct to_char(s.sale_date, 'YYYY-MM') as date,
        count(distinct s.customer_id) as total_customers,
@@ -100,7 +99,7 @@ on s.product_id = p.product_id
 group by date
 ;
 
-/* 3. Отчет о покупателях, 1-ая покупка которых совершена в ходе проведения акций (акционные товары равны 0) */
+-- 3. Отчет о покупателях, 1-ая покупка которых совершена в ходе проведения акций (акционные товары равны 0)
 
 with tab as (
     select distinct
