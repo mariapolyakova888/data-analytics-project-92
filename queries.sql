@@ -9,11 +9,11 @@ from customers;
 -- Отчет о десятке лучших продавцов, выполнивших наибольшую выручку.Отсортирован по убыванию выручки
 
 select
-    concat(e.first_name, ' ', null, e.last_name) as name,
+    concat(e.first_name, ' ', e.last_name) as name,
     count(s.sales_id) as operations, 
     sum(s.quantity * p.price) as income
 from sales s
-left join employees e
+inner join employees e
 on s.sales_person_id = e.employee_id
 inner join products p
 on s.product_id = p.product_id
@@ -27,23 +27,31 @@ limit 10
 
 with tab as (
     select
-        concat(e.first_name, ' ', null, e.last_name) as name,
-        round(avg(s.quantity*p.price), 0) as average_income,
-        round(avg(s.quantity * p.price), 0) as avg_income_all_employees
+        concat(e.first_name, ' ', e.last_name) as name,
+        count(s.sales_id) as operations, 
+        sum(s.quantity * p.price) as income,
+        round(avg(s.quantity * p.price), 0) as average_income
     from sales s
-    left join employees e
+    inner join employees e
     on s.sales_person_id = e.employee_id
-    left join products p
+    inner join products p
     on s.product_id = p.product_id
     group by 1
-)  
+) 
 select
-    name,
-    average_income
+    tab.name,
+    tab.average_income
 from tab
-group by 1, 2, avg_income_all_employees
-having 2 < avg_income_all_employees
-order by 2 asc
+group by tab.name, tab.average_income
+having tab.average_income < (select
+                                  round(avg(s.quantity * p.price), 0) as average_income
+                              from sales s
+                              inner join employees e
+                              on s.sales_person_id = e.employee_id
+                              inner join products p
+                              on s.product_id = p.product_id
+                              )
+order by tab.average_income asc
 limit 10
 ;
 
@@ -53,7 +61,7 @@ with tab as (
     select
         to_char(s.sale_date, 'id') as num_weekday,
         to_char(date(s.sale_date), 'day') as weekday,
-        concat(e.first_name, ' ', null, e.last_name) as name,
+        concat(e.first_name, ' ', e.last_name) as name,
         round(sum(s.quantity*p.price), 0) as income
     from sales s
     left join employees e
@@ -104,9 +112,9 @@ group by date
 with tab as (
     select distinct
         c.customer_id,
-        concat(c.first_name, ' ', null, c.last_name) as customer,
+        concat(c.first_name, ' ', c.last_name) as customer,
         s.sale_date,
-        concat(e.first_name, ' ', null, e.last_name) as seller,
+        concat(e.first_name, ' ', e.last_name) as seller,
         p.price
 from sales s
 inner join customers c
