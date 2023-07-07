@@ -46,13 +46,10 @@ group by tab.name, tab.average_income
 having tab.average_income < (select
                                   round(avg(s.quantity * p.price), 0) as average_income
                               from sales s
-                              inner join employees e
-                              on s.sales_person_id = e.employee_id
                               inner join products p
                               on s.product_id = p.product_id
                               )
 order by tab.average_income asc
-limit 10
 ;
 
 --3. Отчет о выручке по дням недели, отсортированный по порядковому номеру дня недели
@@ -76,8 +73,8 @@ select
     tab.weekday,
     tab.income
 from tab
-group by tab.name, tab.weekday, tab.num_weekday, tab.income
-order by tab.name, tab.num_weekday asc
+group by tab.weekday, tab.num_weekday, tab.name, tab.income
+order by tab.num_weekday, tab.name asc
 ;
 
 -- 6-й шаг проекта:
@@ -109,13 +106,10 @@ group by date
 
 -- 3. Отчет о покупателях, 1-ая покупка которых совершена в ходе проведения акций (акционные товары равны 0)
 
-with tab as (
-    select distinct
-        c.customer_id,
-        concat(c.first_name, ' ', c.last_name) as customer,
-        s.sale_date,
-        concat(e.first_name, ' ', e.last_name) as seller,
-        p.price
+select distinct on (s.customer_id)
+    concat(c.first_name, ' ', c.last_name) as customer,
+    s.sale_date,
+    concat(e.first_name, ' ', e.last_name) as seller
 from sales s
 inner join customers c
 on s.customer_id = c.customer_id
@@ -124,12 +118,5 @@ on s.sales_person_id = e.employee_id
 inner join products p
 on s.product_id = p.product_id
 where price = 0
-order by c.customer_id
-)
-select distinct on (tab.customer)
-    tab.customer,
-    tab.sale_date,
-    tab.seller
-from tab
-order by tab.customer
+order by s.customer_id, s.sale_date
 ;
